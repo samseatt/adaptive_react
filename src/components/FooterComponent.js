@@ -9,7 +9,7 @@ function Footer(props) {
                 <div class="col col-4 offset-1">
                     <h5>Corporate</h5>
                     <ul class="list-unstyled">
-                        <li><a href="./contact"><span class="fa fa-address-card"></span> Contact Us</a></li>
+                        <li><a href="./contactus"><span class="fa fa-address-card"></span> Contact Us</a></li>
                         <li><a href="./aboutus"><span class="fa fa-info"></span> About Us</a></li>
                         <li><a href="./legal"><span class="fa fa-university"></span> Legal</a></li>
                         <li>

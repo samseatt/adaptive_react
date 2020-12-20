@@ -35,10 +35,10 @@ const mapDispatchToProps = dispatch => ({
 
 class Main extends Component {
 
-  constructor(props) {
-    super(props);
+  // constructor(props) {
+  //   super(props);
 
-  }
+  // }
 
   componentDidMount() {
     this.props.fetchContents();
@@ -53,19 +53,19 @@ render() {
     const ContentPage = (pageId, pageName, caategoryId, categoryName, configId, configName) => {
       return(
         <Content 
-          content={this.props.contents.contents.filter((content) => content.name == pageName)[0]}
+          content={this.props.contents.contents.filter((content) => content.name === pageName)[0]}
           contentLoading={this.props.contents.isLoading}
           contentErrMess={this.props.contents.errMess}
-          config={this.props.configs.configs.filter((config) => config.name == configName)[0]}
+          config={this.props.configs.configs.filter((config) => config.name === configName)[0]}
           configLoading={this.props.configs.isLoading}
           configErrMess={this.props.configs.errMess}
-          category={this.props.categories.categories.filter((category) => category.name == categoryName)[0]}
+          category={this.props.categories.categories.filter((category) => category.name === categoryName)[0]}
           categoryLoading={this.props.categories.isLoading}
           categoryErrMess={this.props.categories.errMess}
-          notes={this.props.notes.notes.filter((note) => note.ref == pageName)}
+          notes={this.props.notes.notes.filter((note) => note.ref === pageName)}
           notesLoading={this.props.notes.isLoading}
           notesErrMess={this.props.notes.errMess}
-          refs={this.props.refs.refs.filter((ref) => ref.ref == pageName)}
+          refs={this.props.refs.refs.filter((ref) => ref.ref === pageName)}
           refsLoading={this.props.refs.isLoading}
           refsErrMess={this.props.refs.errMess}
           postComment={this.props.postComment}

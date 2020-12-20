@@ -134,7 +134,7 @@ class NoteForm extends Component {
                             <Col>
                                 <Label htmlFor="author">Contributor</Label>
                                 <Control.text model=".author" id="author" name="author"
-                                    placeholder="Your Name"
+                                    placeholder="Your name or group"
                                     className="form-control"
                                     validators={{
                                         required, minLength: minLength(3), maxLength: maxLength(30)
@@ -155,7 +155,7 @@ class NoteForm extends Component {
                             <Col>
                                 <Label htmlFor="authority">Designation</Label>
                                 <Control.text model=".authority" id="authority" name="authority"
-                                    placeholder="Your Title"
+                                    placeholder="Its title or role"
                                     className="form-control"
                                     validators={{
                                         maxLength: maxLength(30)
@@ -231,7 +231,7 @@ class RefForm extends Component {
                             <Col>
                                 <Label htmlFor="title">Reference Title</Label>
                                 <Control.text model=".title" id="title" name="title"
-                                    placeholder="Your Name"
+                                    placeholder="The link as the user will see"
                                     className="form-control"
                                     validators={{
                                         required, minLength: minLength(3), maxLength: maxLength(50)
@@ -252,7 +252,7 @@ class RefForm extends Component {
                             <Col>
                                 <Label htmlFor="path">Referene Link</Label>
                                 <Control.text model=".path" id="path" name="path"
-                                    placeholder="Your Name"
+                                    placeholder="The actual link or path"
                                     className="form-control"
                                     validators={{
                                         required, minLength: minLength(3), maxLength: maxLength(50)
@@ -357,72 +357,107 @@ function RenderCustomContent({content, isContentLoading, contentErrMess, notes, 
     }
 }
 
-function RenderRightMenu({config, content, category, refs, isContentLoading, contentErrMess, isCategoryLoading, categoryErrMess, isRefsLoading, refsErrMess, postRef}) {
+// function RenderRightMenu({config, content, category, refs, isContentLoading, contentErrMess, isCategoryLoading, categoryErrMess, isRefsLoading, refsErrMess, postRef}) {
+class RightNav extends Component {
 
-    if (isCategoryLoading) {
-        return(
-            <Loading />
-        );
+    constructor(props) {
+        super(props);
+
+        this.toggleNav = this.toggleNav.bind(this);
+
+        this.state = {
+            isNavOpen: false,
+            isNavFixed: false
+        };
     }
-    else if (categoryErrMess) {
-        return(
-            <h4>{categoryErrMess}</h4>
-        );
+    
+    toggleNav() {
+        this.setState({
+          isNavOpen: !this.state.isNavOpen
+        });
     }
-    else if (isContentLoading) {
-        return(
-            <Loading />
-        );
-    }
-    else if (contentErrMess) {
-        return(
-            <h4>{contentErrMess}</h4>
-        );
-    }
-    else if (isRefsLoading) {
-        return(
-            <Loading />
-        );
-    }
-    else if (refsErrMess) {
-        return(
-            <h4>{refsErrMess}</h4>
-        );
-    }
-    else
-    {
-        return (
-            <div className="col-12 col-md-3">
-                <Card>
-                    <CardHeader className={config.theme}>{content.title} </CardHeader>
-                    <CardImg width="100%" src={content.imageRhsInv} alt={content.pageName} />
-                    <Collapse isOpen={category.name === content.name} navbar>
-                    <CardBody className="rightnav">
-                        {category.subjects.map(
-                        sub => (
-                                <div key={sub.id} class="leftnav" >
-                                    <a href={sub.path}>{sub.title}</a><hr/>
-                                </div>
-                            )
-                        )}
-                    </CardBody>
-                    </Collapse>
-                    <CardImg width="100%" src={content.imageRhs} alt={content.pageName} />
-                    <CardBody className="rightnav">
-                        {refs.map(
-                            ref => (
-                                <div>
-                                    <a class="leftnav" target="new" href={ref.path}>{ref.title}</a>
-                                    <hr/>
-                                </div>
-                            )
-                        )}
-                    </CardBody>
-                </Card>
-                <br/>
-                <RefForm contentId={content.id} postRef={postRef}  pageName={content.name} />
-            </div>
-        )
+
+    render() {
+        if (this.props.configLoading) {
+            return(
+                <Loading />
+            );
+        }
+        else if (this.props.configErrMessage) {
+            return(
+                <h4>{this.props.configErrMessage}</h4>
+            );
+        }
+        else if (this.props.isCategoryLoading) {
+            return(
+                <Loading />
+            );
+        }
+        else if (this.props.categoryErrMess) {
+            return(
+                <h4>{this.props.categoryErrMess}</h4>
+            );
+        }
+        else if (this.props.isContentLoading) {
+            return(
+                <Loading />
+            );
+        }
+        else if (this.props.contentErrMess) {
+            return(
+                <h4>{this.props.contentErrMess}</h4>
+            );
+        }
+        else if (this.props.isRefsLoading) {
+            return(
+                <Loading />
+            );
+        }
+        else if (this.props.refsErrMess) {
+            return(
+                <h4>{this.props.refsErrMess}</h4>
+            );
+        }
+        else
+        {
+            if(this.props.content.name === this.props.category.name) {
+                this.state.isNavOpen = true;
+                this.isNavFixed = true;
+            }
+            return (
+                <div className="col-12 col-md-3">
+                    <span className="fa fa-caret-down" hidden={this.isNavFixed} />
+                    <Card>
+                        <CardHeader className={this.props.config.theme} onClick={this.toggleNav}>{this.props.content.title} </CardHeader>
+                        <CardImg width="100%" src={this.props.content.imageRhsInv} alt={this.props.content.pageName} />
+                        <Collapse isOpen={this.state.isNavOpen} navbar>
+                        <CardBody className="rightnav">
+                            {this.props.category.subjects.map(
+                            sub => (
+                                    <div key={sub.id} class="leftnav" >
+                                        <a href={sub.path}>{sub.title}</a><hr/>
+                                    </div>
+                                )
+                            )}
+                        </CardBody>
+                        </Collapse>
+                        <CardImg width="100%" src={this.props.content.imageRhs} alt={this.props.content.pageName} />
+                        <CardBody className="rightnav">
+                            {this.props.refs.map(
+                                ref => (
+                                    <div>
+                                        <a class="leftnav" target="new" href={ref.path}>{ref.title}</a>
+                                        <hr/>
+                                    </div>
+                                )
+                            )}
+                        </CardBody>
+                    </Card>
+                    <br/>
+                    <RefForm contentId={this.props.content.id} postRef={this.props.postRef}  pageName={this.props.content.name} />
+                </div>
+            )
+        }
     }
 }
 
@@ -464,10 +499,12 @@ function Content(props) {
                             notesErrMess={props.notesErrMess}
                             postNote={props.postNote} />
                 </div>
-                <RenderRightMenu config={props.config}
+                <RightNav config={props.config}
                         content={props.content}
                         category={props.category}
                         refs={props.refs}
+                        isConfigLoading={props.contentLoading}
+                        configErrMess={props.contentErrMess}
                         isContentLoading={props.contentLoading}
                         contentErrMess={props.contentErrMess}
                         isCategoryLoading={props.categoryLoading}

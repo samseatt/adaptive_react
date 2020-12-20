@@ -3,6 +3,7 @@ import { Breadcrumb, BreadcrumbItem,
     Button, Row, Col, Label } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Control, Form, Errors, actions } from 'react-redux-form';
+import { postFeedback } from '../redux/ActionCreators';
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
@@ -31,22 +32,23 @@ const Contact = (props) => {
                     <div className="col-12 col-sm-4 offset-sm-1">
                             <h5>Our Address</h5>
                             <address>
-                            121, Clear Water Bay Road<br />
-                            Clear Water Bay, Kowloon<br />
-                            HONG KONG<br />
-                            <i className="fa fa-phone"></i>: +852 1234 5678<br />
-                            <i className="fa fa-fax"></i>: +852 8765 4321<br />
-                            <i className="fa fa-envelope"></i>: <a href="mailto:confusion@food.net">confusion@food.net</a>
+                            701 West Georgia Street<br />
+                            Suite 1500<br />
+                            Vancouver, BC V7Y 1C6<br />
+                            <i className="fa fa-phone"></i>: (604) 555-1234<br />
+                            <i className="fa fa-fax"></i>: (604) 555-4321<br />
+                            <i className="fa fa-envelope"></i>: <a href="mailto:info@adaprise.com">info@adaprise.com</a>
                             </address>
                     </div>
                     <div className="col-12 col-sm-6 offset-sm-1">
                         <h5>Map of our Location</h5>
+                        <iframe title="gmap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12317.933801820958!2d-123.13931296646646!3d49.29056316900882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5486718632dfc0b9%3A0xd07443bd6b2276ae!2s1600%20W%20Georgia%20St%2C%20Vancouver%2C%20BC%20V6G%202Z6!5e1!3m2!1sen!2sca!4v1608453080414!5m2!1sen!2sca" width="400" height="300"></iframe>
                     </div>
                     <div className="col-12 col-sm-11 offset-sm-1">
                         <div className="btn-group" role="group">
                             <a role="button" className="btn btn-primary" href="tel:+85212345678"><i className="fa fa-phone"></i> Call</a>
                             <a role="button" className="btn btn-info"><i className="fa fa-skype"></i> Skype</a>
-                            <a role="button" className="btn btn-success" href="mailto:confusion@food.net"><i className="fa fa-envelope-o"></i> Email</a>
+                            <a role="button" className="btn btn-success" href="mailto:info@adaprise.com"><i className="fa fa-envelope-o"></i> Email</a>
                         </div>
                     </div>
                 </div>
@@ -75,7 +77,6 @@ class ContactForm extends Component {
             lastname: values.lastname,
             telnum: values.telnum,
             email: values.email,
-            telnum: values.telnum,
             agree: values.agree,
             contactType: values.contactType,
             message: values.message
