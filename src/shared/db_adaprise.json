@@ -97,6 +97,69 @@
       "path": "https://usegalaxy.org",
       "date": "2020-12-20T17:28:31.908Z",
       "id": 9
+    },
+    {
+      "ref": "education",
+      "title": "Cutting-Edge Trends in Digital Learning Technology",
+      "path": "https://www.knovva.com/5-cutting-edge-trends-in-digital-learning-technology/",
+      "date": "2020-12-21T06:03:33.051Z",
+      "id": 10
+    },
+    {
+      "ref": "education",
+      "title": "Machine Learning in Education - AWS",
+      "path": "https://aws.amazon.com/education/ml-in-education/",
+      "date": "2020-12-21T06:04:55.318Z",
+      "id": 11
+    },
+    {
+      "ref": "education",
+      "title": "6 Ways Machine Learning Will Revolutionize the Education Sector",
+      "path": "https://www.thetechedvocate.org/6-ways-machine-learning-will-revolutionize-the-education-sector/",
+      "date": "2020-12-21T06:07:24.801Z",
+      "id": 12
+    },
+    {
+      "ref": "vision",
+      "title": "Hindsight is 20/20",
+      "path": "https://www.imf.org/external/pubs/ft/fandd/2020/06/how-will-the-world-be-different-after-COVID-19.htm",
+      "date": "2020-12-21T13:20:41.014Z",
+      "id": 13
+    },
+    {
+      "ref": "network",
+      "title": "Internet of things (wikipedia)",
+      "path": "Internet of things",
+      "date": "2020-12-21T13:27:10.017Z",
+      "id": 14
+    },
+    {
+      "ref": "network",
+      "title": "AWS IoT",
+      "path": "https://aws.amazon.com/iot/",
+      "date": "2020-12-21T13:28:52.427Z",
+      "id": 15
+    },
+    {
+      "ref": "network",
+      "title": "What is the Internet of Things?",
+      "path": "https://www.wired.co.uk/article/internet-of-things-what-is-explained-iot",
+      "date": "2020-12-21T13:29:56.742Z",
+      "id": 16
+    },
+    {
+      "ref": "sustain",
+      "title": "What is climate change? The definition, causes and effects",
+      "path": "https://www.wired.co.uk/article/what-is-climate-change-definition-causes-effects",
+      "date": "2020-12-21T13:33:22.545Z",
+      "id": 17
+    },
+    {
+      "ref": "network",
+      "title": "Lifewire: Predicting the Future of Computer Networks and the Internet",
+      "path": "https://www.lifewire.com/predicting-the-future-of-computer-networking-818269",
+      "date": "2020-12-21T13:39:41.737Z",
+      "id": 18
     }
   ],
   "notes": [
@@ -277,6 +340,38 @@
       "text": "Since the site does not let me edit my comments after they are submitted, just a quick addendum. Forget to add my blog address: hostagemaking101.com\n\nThanks in advance!",
       "date": "2020-12-20T17:57:15.596Z",
       "id": 25
+    },
+    {
+      "ref": "education",
+      "author": "Sam Seatt",
+      "authority": "Principal Consultant",
+      "text": "How will digital learning technology leverage AI? Using artificial intelligence, platforms will be able to shape the curriculum and experience based on a user’s past interactions. These “adaptive technologies” use data to dynamically serve up the best lesson for that particular student at that particular time. Further, bots will automate rote and repetitive tasks for teachers and students alike. This will free up people to focus on the important work, increasing efficiency and productivity for every user.",
+      "date": "2020-12-21T05:57:17.569Z",
+      "id": 26
+    },
+    {
+      "ref": "education",
+      "author": "Sam Seatt",
+      "authority": "Principal Consultant",
+      "text": "Machine learning (ML) is transforming education and fundamentally changing teaching, learning, and research. Educators are using ML to spot struggling students earlier and take action to improve success and retention. Researchers are accelerating research with ML to unlock new discoveries and insights. ML is expanding the reach and impact of online learning content through localization, transcription, text-to-speech, and personalization. Lastly, AWS is working with leaders in the public sector to adapt to the new world of ML and better equip students with the skills and expertise they need to succeed.",
+      "date": "2020-12-21T06:05:48.944Z",
+      "id": 27
+    },
+    {
+      "ref": "network",
+      "author": "Matthew Evans",
+      "authority": " IoT programme head at techUK",
+      "text": "In the broadest sense, the term IoT encompasses everything connected to the internet, but it is increasingly being used to define objects that \"talk\" to each other. \"Simply, the Internet of Things is made up of devices – from simple sensors to smartphones and wearables – connected together,\"",
+      "date": "2020-12-21T13:31:24.742Z",
+      "id": 28
+    },
+    {
+      "ref": "sustain",
+      "author": "WIRED",
+      "authority": "Tuesday 15 May 2018",
+      "text": "\nClimate change is the catch-all term for the shift in worldwide weather phenomena associated with an increase in global average temperatures. It's real and temperatures have been going up around the world for many decades.",
+      "date": "2020-12-21T13:35:16.990Z",
+      "id": 29
     }
   ],
   "categories": [
@@ -1242,7 +1337,11 @@
       "categoryTitle": "Business",
       "name": "ebiz",
       "title": "Electronic Business",
-      "abstract": "The increased adoption of the cloud and web services paradigms, pervasive Internet and wireless connectivity and explosive rise of social media, are having a profound impact on the way business is conducted all across the world.",
+      "abstract": [
+        {
+          "text": "The increased adoption of the cloud and web services paradigms, pervasive Internet and wireless connectivity and explosive rise of social media, are having a profound impact on the way business is conducted all across the world."
+        }
+      ],
       "text": [
         "Electronic business by its definition involves everything that you need to run your business effectively, leveraging computers, mobile devices, networks, the Web, inter- and intra-business interfaces, the Cloud, software services and social media channels. In today's world e-business powers virtually all business functions and spans the entire value chain, including supply chain management, business-to-business interaction, accounting, purchasing, customer service, order processing and shipping. The next generation of e-business will surely extend its current boundaries of web, the Internet, intranets and extranets, as we continue to venture further into realms of the 'mobile', the 'wireless', the 'social' and the 'cloud', and beyond, into the sense-and-detect, cognitive and highly collaborative paradigms. ",
         "Adaptive Enterprise consultants can today assist our clients with following e-business services.",
@@ -1258,7 +1357,7 @@
       "category": "tech",
       "categoryTitle": "Technology",
       "name": "network",
-      "title": "Networks of Things",
+      "title": "Networks of Stuff",
       "abstract": [
         {
           "text": "The Internet of Things promises to bring every object, consumer and activity into the digital realm.",
@@ -1435,6 +1534,28 @@
       "message": "Jerry, it's a new day.",
       "date": "2020-12-21T04:50:11.715Z",
       "id": 1
+    },
+    {
+      "firstname": "Sam",
+      "lastname": "Seatt",
+      "telnum": "3242432423",
+      "email": "a@b.co",
+      "agree": true,
+      "contactType": "Email",
+      "message": "Some test feedback",
+      "date": "2020-12-21T12:34:44.197Z",
+      "id": 2
+    },
+    {
+      "firstname": "Sam",
+      "lastname": "Seatt",
+      "telnum": "3242432423",
+      "email": "a@b.co",
+      "agree": false,
+      "contactType": "Tel.",
+      "message": "safdsadd",
+      "date": "2020-12-21T12:40:35.241Z",
+      "id": 3
     }
   ]
 }
