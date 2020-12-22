@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "src"
+		},
+		{
+			"path": "../../Bootstrap4/adaptiveweb"
+		}
+	],
+	"settings": {}
+}

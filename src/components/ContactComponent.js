@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { Breadcrumb, BreadcrumbItem,
     Button, Row, Col, Label } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { Control, Form, Errors, actions } from 'react-redux-form';
-import { postFeedback } from '../redux/ActionCreators';
-
+import { Control, Form, Errors } from 'react-redux-form';
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
 const minLength = (len) => (val) => val && (val.length >= len);
@@ -46,9 +44,9 @@ const Contact = (props) => {
                     </div>
                     <div className="col-12 col-sm-11 offset-sm-1">
                         <div className="btn-group" role="group">
-                            <a role="button" className="btn btn-primary" href="tel:+85212345678"><i className="fa fa-phone"></i> Call</a>
-                            <a role="button" className="btn btn-info"><i className="fa fa-skype"></i> Skype</a>
-                            <a role="button" className="btn btn-success" href="mailto:info@adaprise.com"><i className="fa fa-envelope-o"></i> Email</a>
+                            <a role="button" className="btn btn-call" href="tel:+85212345678"><i className="fa fa-phone"></i> Call</a>
+                            <a role="button" className="btn btn-sms"><i className="fa fa-skype"></i> Skype</a>
+                            <a role="button" className="btn btn-email" href="mailto:info@adaprise.com"><i className="fa fa-envelope-o"></i> Email</a>
                         </div>
                     </div>
                 </div>
@@ -213,7 +211,7 @@ class ContactForm extends Component {
                             </Row>
                             <Row className="form-group">
                                 <Col md={{size:10, offset: 2}}>
-                                    <Button type="submit" color="primary">
+                                    <Button type="submit" color="secondary">
                                     Send Feedback
                                     </Button>
                                 </Col>

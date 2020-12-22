@@ -62,7 +62,8 @@
   .modal .modal-header {
     background: #444444;
     color: floralwhite; }
-    .modal .modal-header .close {
+  
+  .modal .modal-header .close {
       color: floralwhite; }
   
   .modal .modal-body {
@@ -75,6 +76,30 @@
     background: #777;
     color: floralwhite; }
   
+  .btn-call {
+    background: #666666;
+    color: floralwhite; }
+
+  .btn-call:hover {
+    background: #d14020;
+    color: floralwhite; }
+  
+  .btn-sms {
+    background: #AAAAAA;
+    color: floralwhite; }
+    
+  .btn-sms:hover {
+    background: #d14020;
+    color: floralwhite; }
+    
+    .btn-email {
+    background: #666666;
+    color: floralwhite; }
+ 
+  .btn-email:hover {
+    background: #d14020;
+    color: floralwhite; }
+   
   h5 {
     color: #d14020; }
   
@@ -93,6 +118,10 @@
   .rightnav {
     background-color: #DDDDDD; }
   
+  .maincontent {
+    font-size: 18px;
+  }
+
   .theme-home {
     background-color: #444444; 
     color: white;

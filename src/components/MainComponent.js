@@ -213,6 +213,12 @@ render() {
       )
     }
 
+    const EbizPage = () => {
+      return(
+        ContentPage(35, "ebiz", 3, "business", 3, "business")
+      )
+    }
+
     const NetworkPage = () => {
       return(
         ContentPage(41, "network", 4, "tech", 4, "tech")
@@ -256,12 +262,12 @@ render() {
       );
     }  
 
-    const ContactPage = () => {
-      console.log('ContactPage called.');
-      return(
-        ContentPage(72, "contact", 0, "home", 0, "home")
-      );
-    }  
+    // const ContactPage = () => {
+    //   console.log('ContactPage called.');
+    //   return(
+    //     ContentPage(72, "contact", 0, "home", 0, "home")
+    //   );
+    // }  
 
     const CorporatePage = () => {
       return(
@@ -320,6 +326,7 @@ render() {
                 <Route exact path='/growth' component={GrowthPage} />
                 <Route exact path='/sustain' component={SustainPage} />
                 <Route exact path='/security' component={SecurityPage} />
+                <Route exact path='/ebiz' component={EbizPage} />
                 <Route exact path='/network/' component={NetworkPage} />
                 <Route exact path='/saas' component={SaasPage} />
                 <Route exact path='/analytics' component={AnalyticsPage} />
@@ -327,9 +334,10 @@ render() {
                 <Route exact path='/social' component={SocialPage} />
                 <Route exact path='/mobile' component={MobilePage} />
                 <Route exact path='/legal' component={LegalPage} />
-                <Route exact path='/contact' component={ContactPage} />
+                {/* <Route exact path='/contact' component={ContactPage} /> */}
                 <Route exact path='/pg' component={OtherPage} />
                 <Route exact path='/contactus' component={ContactUs} />
+                <Route exact path='/aboutus' component={AboutPage} />
                 <Redirect to="/home" />
               </Switch>
             </CSSTransition>

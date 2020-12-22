@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import { Row, Col, Label, Modal, ModalHeader, ModalBody, Button } from 'reactstrap';
 import { Control, LocalForm, Errors } from 'react-redux-form';
-
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
 const minLength = (len) => (val) => val && (val.length >= len);
 
-// Usage:
-//    <NoteForm contentId={content.id} postNote={postNote} pageName={content.name} />
-
-class NoteForm extends Component {
+class RefForm extends Component {
 
     constructor(props) {
         super(props);
@@ -31,64 +27,57 @@ class NoteForm extends Component {
 
     handleSubmit(values) {
         this.toggleModal();
-        this.props.postNote(this.props.pageName, values.author, values.authority, values.text);
+        this.props.postRef(this.props.pageName, values.title, values.path);
     }
 
     render() {
         return(
         <div>
-            <Button outline onClick={this.toggleModal}><span className="fa fa-pencil"></span> Add Note</Button>
+            <Button outline onClick={this.toggleModal}><span className="fa fa-external-link"></span> Add Reference</Button>
             <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-                <ModalHeader toggle={this.toggleModal}>Submit Note</ModalHeader>
+                <ModalHeader toggle={this.toggleModal}>Submit Reference</ModalHeader>
                 <ModalBody>
                     <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
                         <Row className="form-group">
                             <Col>
-                                <Label htmlFor="author">Contributor</Label>
-                                <Control.text model=".author" id="author" name="author"
-                                    placeholder="Your name or group"
+                                <Label htmlFor="title">Reference Title</Label>
+                                <Control.text model=".title" id="title" name="title"
+                                    placeholder="The link as the user will see"
                                     className="form-control"
                                     validators={{
-                                        required, minLength: minLength(3), maxLength: maxLength(30)
+                                        required, minLength: minLength(3), maxLength: maxLength(100)
                                     }}
                                 />
                                 <Errors
                                     className="text-danger"
-                                    model=".author"
+                                    model=".title"
                                     show="touched"
                                     messages={{
                                         minLength: 'Must be greater than 2 characters',
-                                        maxLength: 'Must be 30 characters or less'
+                                        maxLength: 'Must be 100 characters or less'
                                     }}
                                 />
                             </Col>
                         </Row>
                         <Row className="form-group">
                             <Col>
-                                <Label htmlFor="authority">Designation</Label>
-                                <Control.text model=".authority" id="authority" name="authority"
-                                    placeholder="Its title or role"
+                                <Label htmlFor="path">Referene Link</Label>
+                                <Control.text model=".path" id="path" name="path"
+                                    placeholder="The actual link or path"
                                     className="form-control"
                                     validators={{
-                                        maxLength: maxLength(30)
+                                        required, minLength: minLength(3), maxLength: maxLength(200)
                                     }}
                                 />
                                 <Errors
                                     className="text-danger"
-                                    model=".authority"
+                                    model=".path"
                                     show="touched"
                                     messages={{
-                                        maxLength: 'Must be 30 characters or less'
+                                        minLength: 'Must be greater than 2 characters',
+                                        maxLength: 'Must be 200 characters or less'
                                     }}
                                 />
-                            </Col>
-                        </Row>
-                        <Row className="form-group">
-                            <Col>
-                                <Label htmlFor="text">Comment</Label>
-                                <Control.textarea model=".text" id="text" name="text"
-                                    rows="6"
-                                    className="form-control" />
                             </Col>
                         </Row>
                         <Row className="form-group">
@@ -106,4 +95,4 @@ class NoteForm extends Component {
     }
 }
 
-export default NoteForm;
+export default RefForm;

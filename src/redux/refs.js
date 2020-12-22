@@ -13,6 +13,11 @@ export const Refs = (state  = { isLoading: true,
         case ActionTypes.REFS_FAILED:
             return {...state, isLoading: false, errMess: action.payload};
 
+        case ActionTypes.ADD_REF:
+            var ref = action.payload;
+            return { ...state, refs: state.refs.concat(ref)};
+            
+    
         default:
           return state;
       }

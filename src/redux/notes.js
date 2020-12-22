@@ -11,8 +11,12 @@ export const Notes = (state  = { isLoading: true,
             return {...state, isLoading: true, errMess: null, notes: []}
 
         case ActionTypes.NOTES_FAILED:
-            return {...state, isLoading: false, errMess: action.payload};
+            return {...state, isLoading: false, errMess: action.payload}
 
+        case ActionTypes.ADD_NOTE:
+            var note = action.payload;
+            return { ...state, notes: state.notes.concat(note)};
+        
         default:
           return state;
       }
