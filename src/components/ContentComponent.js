@@ -158,6 +158,7 @@ function RenderCustomContent({content, isContentLoading, contentErrMess, notes, 
                     )
                 )}
                 <NoteForm contentId={content.id} postNote={postNote} pageName={content.name} />
+                <br/>
             </div>
         );
     }

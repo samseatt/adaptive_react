@@ -37,12 +37,19 @@ const Contact = (props) => {
                             <i className="fa fa-fax"></i>: (604) 555-4321<br />
                             <i className="fa fa-envelope"></i>: <a href="mailto:info@adaprise.com">info@adaprise.com</a>
                             </address>
+                            <br/>
                     </div>
                     <div className="col-12 col-sm-6 offset-sm-1">
                         <h5>Map of our Location</h5>
-                        <iframe title="gmap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12317.933801820958!2d-123.13931296646646!3d49.29056316900882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5486718632dfc0b9%3A0xd07443bd6b2276ae!2s1600%20W%20Georgia%20St%2C%20Vancouver%2C%20BC%20V6G%202Z6!5e1!3m2!1sen!2sca!4v1608453080414!5m2!1sen!2sca" width="400" height="300"></iframe>
+                        {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24722.34028125919!2d-123.146110570161!3d49.28868219995327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5486717f4dc48707%3A0x9e3204184a698c54!2s701%20W%20Georgia%20St!5e1!3m2!1sen!2sca!4v1608603270205!5m2!1sen!2sca" width="400" height="300"></iframe> */}
+                        {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18738.28527651806!2d-123.12626068813259!3d49.2904716253059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5486717f4dc48707%3A0x9e3204184a698c54!2s701%20W%20Georgia%20St!5e1!3m2!1sen!2sca!4v1608604605569!5m2!1sen!2sca" width="340" height="500"></iframe> */}
+                        {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18544.4090079886!2d-123.12618363955528!3d49.29063094232475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5486717f4dc48707%3A0x9e3204184a698c54!2s701%20W%20Georgia%20St!5e1!3m2!1sen!2sca!4v1608604860514!5m2!1sen!2sca" width="320" height="600"></iframe> */}
+                        {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d37088.8180159772!2d-123.12618363955528!3d49.29063094232475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5486717f4dc48707%3A0x9e3204184a698c54!2s701%20W%20Georgia%20St!5e1!3m2!1sen!2sca!4v1608604954281!5m2!1sen!2sca" width="320" height="640"></iframe> */}
+                        {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26776.922110240335!2d-123.15381250102742!3d49.28270464955796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5486717f457f6223%3A0xa156805767aefef9!2s701%20W%20Georgia%20St%2C%20Vancouver%2C%20BC%20V7Y%201C6!5e1!3m2!1sen!2sca!4v1608606171695!5m2!1sen!2sca" width="320" height="640"></iframe> */}
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d36573.35603710742!2d-123.16606906136053!3d49.27951086646415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5486717f457f6223%3A0xa156805767aefef9!2s701%20W%20Georgia%20St%2C%20Vancouver%2C%20BC%20V7Y%201C6!5e1!3m2!1sen!2sca!4v1608606301470!5m2!1sen!2sca" width="320" height="640"></iframe>
                     </div>
                     <div className="col-12 col-sm-11 offset-sm-1">
+                        <br/>
                         <div className="btn-group" role="group">
                             <a role="button" className="btn btn-call" href="tel:+85212345678"><i className="fa fa-phone"></i> Call</a>
                             <a role="button" className="btn btn-sms"><i className="fa fa-skype"></i> Skype</a>
