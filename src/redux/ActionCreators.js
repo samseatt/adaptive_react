@@ -1,30 +1,46 @@
 import * as ActionTypes from './ActionTypes';
 import { baseUrl } from '../shared/baseUrl';
 
+import { CONTENTS } from '../shared/contents';
+import { CATEGORIES } from '../shared/categories';
+import { CONFIGS } from '../shared/configs';
+import { NOTES } from '../shared/notes';
+import { REFS } from '../shared/refs';
+
+
+const useServer = false;
+
 
 export const fetchContents = () => (dispatch) => {
    
   console.log('fetchContents called.');
   dispatch(contentsLoading());
 
-  return fetch(baseUrl + 'contents')
-  .then(response => {
-      if (response.ok) {
-        console.log('fetchContents respnose is successful: ' + response);
-        return response;
-      } else {
-        var error = new Error('Error ' + response.status + ': ' + response.statusText);
-        error.response = response;
-        throw error;
-      }
-    },
-    error => {
-          var errmess = new Error(error.message);
-          throw errmess;
-    })
-  .then(response => response.json())
-  .then(contents => dispatch(addContents(contents)))
-  .catch(error => dispatch(contentsFailed(error.message)));
+  if (useServer) {
+    return fetch(baseUrl + 'contents')
+    .then(response => {
+        if (response.ok) {
+          console.log('fetchContents respnose is successful: ' + response);
+          return response;
+        } else {
+          var error = new Error('Error ' + response.status + ': ' + response.statusText);
+          error.response = response;
+          throw error;
+        }
+      },
+      error => {
+            var errmess = new Error(error.message);
+            throw errmess;
+      })
+    .then(response => response.json())
+    .then(contents => dispatch(addContents(contents)))
+    .catch(error => dispatch(contentsFailed(error.message)));
+  
+  } else {
+    setTimeout(() => {
+      dispatch(addContents(CONTENTS));
+    }, 500);
+  }
 }
 
 export const contentsLoading = () => ({
@@ -47,24 +63,30 @@ export const fetchConfigs = () => (dispatch) => {
   console.log('fetchConfigs called.');
   dispatch(configsLoading());
 
-  return fetch(baseUrl + 'configs')
-  .then(response => {
-      if (response.ok) {
-        console.log('fetchConfigs respnose is successful: ' + response);
-        return response;
-      } else {
-        var error = new Error('Error ' + response.status + ': ' + response.statusText);
-        error.response = response;
-        throw error;
-      }
-    },
-    error => {
-          var errmess = new Error(error.message);
-          throw errmess;
-    })
-  .then(response => response.json())
-  .then(configs => dispatch(addConfigs(configs)))
-  .catch(error => dispatch(configsFailed(error.message)));
+  if (useServer) {
+    return fetch(baseUrl + 'configs')
+    .then(response => {
+        if (response.ok) {
+          console.log('fetchConfigs respnose is successful: ' + response);
+          return response;
+        } else {
+          var error = new Error('Error ' + response.status + ': ' + response.statusText);
+          error.response = response;
+          throw error;
+        }
+      },
+      error => {
+            var errmess = new Error(error.message);
+            throw errmess;
+      })
+    .then(response => response.json())
+    .then(configs => dispatch(addConfigs(configs)))
+    .catch(error => dispatch(configsFailed(error.message)));
+  } else {
+    setTimeout(() => {
+      dispatch(addConfigs(CONFIGS));
+    }, 500);
+  }
 }
 
 export const configsLoading = () => ({
@@ -87,24 +109,30 @@ export const fetchCategories = () => (dispatch) => {
   console.log('fetchCategories called.');
   dispatch(categoriesLoading());
 
-  return fetch(baseUrl + 'categories')
-  .then(response => {
-      if (response.ok) {
-        console.log('fetchCategories respnose is successful: ' + response);
-        return response;
-      } else {
-        var error = new Error('Error ' + response.status + ': ' + response.statusText);
-        error.response = response;
-        throw error;
-      }
-    },
-    error => {
-          var errmess = new Error(error.message);
-          throw errmess;
-    })
-  .then(response => response.json())
-  .then(categories => dispatch(addCategories(categories)))
-  .catch(error => dispatch(categoriesFailed(error.message)));
+  if (useServer) {
+    return fetch(baseUrl + 'categories')
+    .then(response => {
+        if (response.ok) {
+          console.log('fetchCategories respnose is successful: ' + response);
+          return response;
+        } else {
+          var error = new Error('Error ' + response.status + ': ' + response.statusText);
+          error.response = response;
+          throw error;
+        }
+      },
+      error => {
+            var errmess = new Error(error.message);
+            throw errmess;
+      })
+    .then(response => response.json())
+    .then(categories => dispatch(addCategories(categories)))
+    .catch(error => dispatch(categoriesFailed(error.message)));
+  } else {
+    setTimeout(() => {
+      dispatch(addCategories(CATEGORIES));
+    }, 500);
+  }
 }
 
 export const categoriesLoading = () => ({
@@ -127,24 +155,30 @@ export const fetchRefs = () => (dispatch) => {
   console.log('fetchRefs called.');
   dispatch(refsLoading());
 
-  return fetch(baseUrl + 'refs')
-  .then(response => {
-      if (response.ok) {
-        console.log('fetchRefs respnose is successful: ' + response);
-        return response;
-      } else {
-        var error = new Error('Error ' + response.status + ': ' + response.statusText);
-        error.response = response;
-        throw error;
-      }
-    },
-    error => {
-          var errmess = new Error(error.message);
-          throw errmess;
-    })
-  .then(response => response.json())
-  .then(refs => dispatch(addRefs(refs)))
-  .catch(error => dispatch(refsFailed(error.message)));
+  if (useServer) {
+    return fetch(baseUrl + 'refs')
+    .then(response => {
+        if (response.ok) {
+          console.log('fetchRefs respnose is successful: ' + response);
+          return response;
+        } else {
+          var error = new Error('Error ' + response.status + ': ' + response.statusText);
+          error.response = response;
+          throw error;
+        }
+      },
+      error => {
+            var errmess = new Error(error.message);
+            throw errmess;
+      })
+    .then(response => response.json())
+    .then(refs => dispatch(addRefs(refs)))
+    .catch(error => dispatch(refsFailed(error.message)));
+  } else {
+    setTimeout(() => {
+      dispatch(addRefs(REFS));
+    }, 500);
+  }
 }
 
 export const refsLoading = () => ({
@@ -167,24 +201,30 @@ export const fetchNotes = () => (dispatch) => {
   console.log('fetchNotes called.');
   dispatch(notesLoading());
 
-  return fetch(baseUrl + 'notes')
-  .then(response => {
-      if (response.ok) {
-        console.log('fetchNotes respnose is successful: ' + response);
-        return response;
-      } else {
-        var error = new Error('Error ' + response.status + ': ' + response.statusText);
-        error.response = response;
-        throw error;
-      }
-    },
-    error => {
-          var errmess = new Error(error.message);
-          throw errmess;
-    })
-  .then(response => response.json())
-  .then(notes => dispatch(addNotes(notes)))
-  .catch(error => dispatch(notesFailed(error.message)));
+  if (useServer) {
+    return fetch(baseUrl + 'notes')
+    .then(response => {
+        if (response.ok) {
+          console.log('fetchNotes respnose is successful: ' + response);
+          return response;
+        } else {
+          var error = new Error('Error ' + response.status + ': ' + response.statusText);
+          error.response = response;
+          throw error;
+        }
+      },
+      error => {
+            var errmess = new Error(error.message);
+            throw errmess;
+      })
+    .then(response => response.json())
+    .then(notes => dispatch(addNotes(notes)))
+    .catch(error => dispatch(notesFailed(error.message)));
+  } else {
+    setTimeout(() => {
+      dispatch(addNotes(NOTES));
+    }, 500);
+  }
 }
 
 export const notesLoading = () => ({
@@ -217,30 +257,35 @@ export const postNote = (ref, author, authority, text) => (dispatch) => {
     };
     newNote.date = new Date().toISOString();
     
-    return fetch(baseUrl + 'notes', {
-        method: "POST",
-        body: JSON.stringify(newNote),
-        headers: {
-          "Content-Type": "application/json"
-        },
-        credentials: "same-origin"
-    })
-    .then(response => {
-        if (response.ok) {
-          return response;
-        } else {
-          var error = new Error('Error ' + response.status + ': ' + response.statusText);
-          error.response = response;
-          throw error;
-        }
-      },
-      error => {
-            throw error;
+    if (useServer) {
+      return fetch(baseUrl + 'notes', {
+          method: "POST",
+          body: JSON.stringify(newNote),
+          headers: {
+            "Content-Type": "application/json"
+          },
+          credentials: "same-origin"
       })
-    .then(response => response.json())
-    .then(response => dispatch(addNote(response)))
-    .catch(error =>  { console.log('post note', error.message);
-        alert('Your note could not be posted\nError: '+error.message); });
+      .then(response => {
+          if (response.ok) {
+            return response;
+          } else {
+            var error = new Error('Error ' + response.status + ': ' + response.statusText);
+            error.response = response;
+            throw error;
+          }
+        },
+        error => {
+              throw error;
+        })
+      .then(response => response.json())
+      .then(response => dispatch(addNote(response)))
+      .catch(error =>  { console.log('post note', error.message);
+          alert('Your note could not be posted\nError: '+error.message); });
+    } else {
+        dispatch(addNote(newNote));
+    }
+      
 };
 
 
@@ -258,30 +303,35 @@ export const postRef = (ref, title, path) => (dispatch) => {
     };
     newRef.date = new Date().toISOString();
     
-    return fetch(baseUrl + 'refs', {
-        method: "POST",
-        body: JSON.stringify(newRef),
-        headers: {
-          "Content-Type": "application/json"
-        },
-        credentials: "same-origin"
-    })
-    .then(response => {
-        if (response.ok) {
-          return response;
-        } else {
-          var error = new Error('Error ' + response.status + ': ' + response.statusText);
-          error.response = response;
-          throw error;
-        }
-      },
-      error => {
-            throw error;
+    if (useServer) {
+      return fetch(baseUrl + 'refs', {
+          method: "POST",
+          body: JSON.stringify(newRef),
+          headers: {
+            "Content-Type": "application/json"
+          },
+          credentials: "same-origin"
       })
-    .then(response => response.json())
-    .then(response => dispatch(addRef(response)))
-    .catch(error =>  { console.log('post ref', error.message);
-        alert('Your ref could not be posted\nError: '+error.message); });
+      .then(response => {
+          if (response.ok) {
+            return response;
+          } else {
+            var error = new Error('Error ' + response.status + ': ' + response.statusText);
+            error.response = response;
+            throw error;
+          }
+        },
+        error => {
+              throw error;
+        })
+      .then(response => response.json())
+      .then(response => dispatch(addRef(response)))
+      .catch(error =>  { console.log('post ref', error.message);
+          alert('Your ref could not be posted\nError: '+error.message); });
+    } else {
+      dispatch(addRef(newRef));
+    }
+  
 };
 
 
@@ -294,6 +344,7 @@ export const addFeedback = (feedback) => ({
 
 export const postFeedback = (feedback) => (dispatch) => {
     
+  if (useServer) {
     return fetch(baseUrl + 'feedback', {
         method: "POST",
         body: JSON.stringify(feedback),
@@ -318,4 +369,7 @@ export const postFeedback = (feedback) => (dispatch) => {
     .then(response => dispatch(addFeedback(response)))
     .catch(error =>  { console.log('post feedback', error.message);
         alert('Your feedback could not be posted\nError: '+ error.message); });
+  } else {
+    dispatch(addFeedback(feedback));
+  }
 };
