@@ -49,8 +49,8 @@ export const NOTES =
     {
       "ref": "art",
       "author": "Sam Iam Seatt",
-      "authority": "The Grinch Who Stole Covid",
-      "text": "That being said, the 'Cloud' and creative application of the associated service (SaaS) paradigm hold tremendous disruptive potential, going forward. Companies can be truly adaptive when they tap into the power, flexibility, connectivity, reliability, security, agility and savings associated with this 'new' way of running business and information technology. ",
+      "authority": "Ham and Eggs Consultant",
+      "text": "Companies can be truly adaptive when they tap into the power, flexibility, connectivity, reliability, security, agility and savings associated with this 'new' way of running business and information technology. ",
       "date": "2020-12-20T02:14:05.054Z",
       "id": 7
     },
@@ -63,7 +63,7 @@ export const NOTES =
       "id": 8
     },
     {
-      "ref": "art",
+      "ref": "social",
       "author": "Green Brown",
       "authority": "CEO, Tailor Made Suits Ltd.",
       "text": "Forget the black tie affair. Our suits are great camo, just when you need it. Be it a wedding, a birthday, a bar mitzvah, or simply a bar brawl. We will dress you with suits perfect for hiding in your occasion. ",
@@ -76,38 +76,6 @@ export const NOTES =
       "note": "asf ads faeedtwertwert t weryw erwe",
       "date": "2020-12-20T02:38:07.869Z",
       "id": 10
-    },
-    {
-      "ref": "artpage",
-      "author": "daf",
-      "authority": "adfsa",
-      "note": "asfas dfs",
-      "date": "2020-12-20T02:46:33.577Z",
-      "id": 13
-    },
-    {
-      "ref": "art",
-      "author": "safasdf",
-      "authority": "asfas d",
-      "text": "afdh stfd;jal;k;lfak;rk wke lkdjf",
-      "date": "2020-12-20T02:47:42.189Z",
-      "id": 14
-    },
-    {
-      "ref": "art",
-      "author": "asdf as",
-      "authority": "asfasdf ",
-      "note": "Something has to give",
-      "date": "2020-12-20T02:48:19.998Z",
-      "id": 15
-    },
-    {
-      "ref": "art",
-      "author": "Hell Yes",
-      "authority": "Ground Hog Day",
-      "text": "Jingle bells jingle bells jingle all the way",
-      "date": "2020-12-20T02:51:32.531Z",
-      "id": 16
     },
     {
       "ref": "about",
